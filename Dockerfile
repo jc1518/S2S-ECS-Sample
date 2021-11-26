@@ -10,4 +10,4 @@ ENV PLATFORM 'Amazon ECS'
 WORKDIR /app
 COPY . /app/
 
-CMD ["python", "app.py"]
+CMD ["python3", "app.py"]
