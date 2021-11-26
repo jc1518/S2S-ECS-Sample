@@ -5,7 +5,6 @@ pip install --upgrade pip && \
 pip install flask pytz
 
 ENV FLASK_APP app.py
-ENV PLATFORM 'Amazon ECS'
 
 WORKDIR /app
 COPY . /app/
