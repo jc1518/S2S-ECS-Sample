@@ -3,14 +3,15 @@ import flask
 import datetime
 import platform
 import os
+import pytz
 
 app = flask.Flask(__name__)
 
 
 @app.route("/")
 def hello():
-    name = flask.request.args.get("name", "ECS-service-demo")
-    time = datetime.datetime.now()
+    name = flask.request.args.get("name", "ECS-Service-Demo")
+    time = datetime.datetime.now(pytz.timezone("Australia/Sydney"))
     python_version = platform.python_version()
     aws_platform = os.environ.get("PLATFORM", "Amazon Web Services")
     return flask.render_template(
@@ -18,8 +19,6 @@ def hello():
         platform=aws_platform,
         flask_version=flask.__version__,
         python_version=python_version,
-        flask_url="https://palletsprojects.com/p/flask/",
-        s2s_url="https://github.com/jc1518/S2S",
         time=time,
         name=name,
     )

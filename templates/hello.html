@@ -22,16 +22,14 @@
     <div class="container">
       <div class="hero-unit">
         <h1>{{ name }}</h1>
-        <h2>
-          Another service proudly deployed by <a href="{{ s2s_url }}"></a>S2S!
-        </h2>
+        <h2>Another service proudly deployed by S2S!</h2>
         <p>
           The Flask application is now running on a container in
           <b>{{ platform }}</b>
         </p>
         <p>
-          The container is running <a href="{{ flask_url }}">Flask</a> version
-          {{ flask_version }} and Python {{ python_version }}
+          The container is running Flask {{ flask_version }} and Python {{
+          python_version }}
         </p>
         <p>{{ time }}</p>
       </div>
