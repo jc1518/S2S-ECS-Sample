@@ -13,10 +13,12 @@ def hello():
     name = flask.request.args.get("name", "ECS-Service-Demo")
     time = datetime.datetime.now(pytz.timezone("Australia/Sydney"))
     python_version = platform.python_version()
+    host = platform.node()
     aws_platform = os.environ.get("PLATFORM", "Amazon Web Services")
     return flask.render_template(
         "hello.html",
         platform=aws_platform,
+        host=host,
         flask_version=flask.__version__,
         python_version=python_version,
         time=time,
