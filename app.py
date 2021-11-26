@@ -14,11 +14,13 @@ def hello():
     time = datetime.datetime.now(pytz.timezone("Australia/Sydney"))
     python_version = platform.python_version()
     host = platform.node()
+    commit = os.environ.get("COMMIT")
     return flask.render_template(
         "hello.html",
         host=host,
         flask_version=flask.__version__,
         python_version=python_version,
+        commit=commit,
         time=time,
         name=name,
     )

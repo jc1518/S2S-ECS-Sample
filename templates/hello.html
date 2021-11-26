@@ -23,11 +23,9 @@
       <div class="hero-unit">
         <h1>{{ name }}</h1>
         <h2>Another service proudly deployed by S2S!</h2>
-        <p>
-          The application ((Flask {{ flask_version }} and Python {{
-          python_version }}) is now running on
-          <b>{{ host }}</b>
-        </p>
+        <p>Version: <b>{{ commit }}</b></p>
+        <p>Host: <b>{{ host }}</b></p>
+        <p>Runtime: Flask {{ flask_version }}, Python {{ python_version }}</p>
         <p>{{ time }}</p>
       </div>
     </div>
